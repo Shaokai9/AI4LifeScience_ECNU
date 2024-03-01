@@ -1,0 +1,1 @@
+Abstract for Deep subcellular detection project: [This deep learning-based approach enables the accurate complete detection and counting of chloroplasts in 3D single cells using microscopic image stacks, and showcases a successful example of utilitzing deep learning methods to analyze subcellular spatial information in plant cells]
