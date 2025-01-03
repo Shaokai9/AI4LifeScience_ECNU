@@ -149,13 +149,11 @@ def detect(save_img=False):
                 cv2.imshow(str(p), im0)
                 cv2.waitKey(1)  # 1 millisecond
 
-            print("目标个数：", len(det))
+            print("Number of targets:", len(det))
             image_obj_size.append(len(det))
 
             with open(txt_path + '.txt', 'a') as f:
-                # f.write(('%g ' * len(line)).rstrip() % line + '\n')
-                # f.write('共有类别' + tf.strings.format("Tensor: {}", cls) + ':' + str((len(det))) + '个' + '\n')
-                f.write('类别' + str(f"{cls}") + '有' + str((len(det))) + '个' + '\n')
+                f.write('Category ' + str(f"{cls}") + ' has ' + str(len(det)) + ' items' + '\n')
 
 
             # Save results (image with detections)
@@ -179,7 +177,7 @@ def detect(save_img=False):
                     vid_writer.write(im0)
 
     print("------------------------")
-    print("所有目标个数", sum(image_obj_size))
+    print("Total number of targets", sum(image_obj_size))
 
     if save_txt or save_img:
         s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
